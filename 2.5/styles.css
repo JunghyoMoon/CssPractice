@@ -1,0 +1,42 @@
+.father {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: repeat(4, 120px);
+}
+
+/* shortcuts! */
+
+.child:nth-child(1) {
+  background-color: teal;
+  /*
+  아래와 같이 start와 end를 간편하게 지정할 수도 있음
+  */
+  grid-column: 1 / 5;
+}
+
+.child:nth-child(2) {
+  background-color: tomato;
+  grid-column: 1 / 4;
+  /*
+  2번째 line에서 시작해서 2개의 cell을 차지
+  */
+  grid-row: 2 / span 2;
+}
+
+.child:nth-child(3) {
+  background-color: goldenrod;
+  /*
+  몇 개의 cell을 차지하는지로 지정할 수도 있음.
+  */
+  grid-row: span 2;
+}
+
+.child:nth-child(4) {
+  background-color: darkred;
+  /*
+  음수는 역순 (-1은 맨 끝)
+  라인 수를 세기 힘들 때 굉장히 유용
+  */
+  grid-column: 1 / -1;
+}
