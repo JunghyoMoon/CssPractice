@@ -18,7 +18,9 @@
   */
   place-items: center center;
 }
-
+/*
+ justify-self, align-self
+ */
 .header {
   background-color: greenyellow;
 }

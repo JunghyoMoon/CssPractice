@@ -1,0 +1,24 @@
+.grid {
+  display: grid;
+  gap: 5px;
+  grid-auto-rows: 100px;
+  margin-bottom: 30px;
+}
+
+.grid:first-child {
+  /* auto-fill: 최대한 많은 갯수의 row 생성 (자동 채움)*/
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+}
+
+.grid:last-child {
+  /* auto-fit: 요소를 최대한 잡아 늘림 (자동 맞춤)*/
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.item:nth-child(odd) {
+  background-color: greenyellow;
+}
+
+.item:nth-child(even) {
+  background-color: lightblue;
+}
