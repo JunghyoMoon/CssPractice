@@ -1,5 +1,6 @@
 @import "_variables";
 @import "_mixins";
+@import "_extends";
 
 body {
   background-color: $bg;
@@ -19,4 +20,13 @@ body {
   h2:nth-child(even) {
     @include sexyTitle("even");
   }
+}
+
+a {
+  @extend %button;
+  text-decoration: none;
+}
+
+button {
+  @extend %button;
 }
