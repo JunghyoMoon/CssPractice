@@ -1,6 +1,22 @@
+@import "_variables";
+@import "_mixins";
+
 body {
-  background-color: peru;
+  background-color: $bg;
+  &:hover {
+    background-color: white;
+  }
   h1 {
     color: white;
+    font-size: $size;
+  }
+}
+
+.box {
+  h2:nth-child(odd) {
+    @include sexyTitle("odd");
+  }
+  h2:nth-child(even) {
+    @include sexyTitle("even");
   }
 }
