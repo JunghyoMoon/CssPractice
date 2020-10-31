@@ -1,0 +1,38 @@
+{
+  "name": "scss-masterclass",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Junghyo Moon",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/register": "^7.12.1",
+    "del": "^4.1.1",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-csso": "^3.0.1",
+    "gulp-sass": "^4.0.2",
+    "node-sass": "^4.12.0"
+  },
+  "scripts": {
+    "dev": "gulp dev"
+  },
+  "browserslist": {
+    "browsers": [
+      "last 2 versions"
+    ]
+  },
+  "description": "practice CSS + SCSS",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JunghyoMoon/cssPractice.git"
+  },
+  "keywords": [
+    "CSS"
+  ],
+  "bugs": {
+    "url": "https://github.com/JunghyoMoon/cssPractice/issues"
+  },
+  "homepage": "https://github.com/JunghyoMoon/cssPractice#readme"
+}
