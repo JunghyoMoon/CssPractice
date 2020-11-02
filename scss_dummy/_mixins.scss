@@ -1,0 +1,13 @@
+/*
+코드의 중복을 막기 위한, 마치 함수와 같은 것.
+*/
+
+@mixin sexyTitle($word) {
+  font-size: 30px;
+  margin-bottom: 10px;
+  @if $word == "odd" {
+    color: indigo;
+  } @else {
+    color: salmon;
+  }
+}
