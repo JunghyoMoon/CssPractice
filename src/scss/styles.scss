@@ -3,6 +3,10 @@
 @import "_extends";
 @import "_reset";
 
+body {
+  display: flex;
+  justify-content: center;
+}
 .wrapper {
   width: 100%;
   max-width: 1400px;
@@ -66,7 +70,7 @@
       ul {
         li:nth-child(7) {
           background-color: $purple;
-          margin-right: 170px;
+          margin-right: 160px;
         }
       }
     }
