@@ -25,11 +25,12 @@
       padding: 10px;
       font-size: 35px;
       color: white;
-      ul li span {
-        /*
-        to do: rotate this shit 180
-        */
-        transform: rotate(0.5turn);
+      ul li {
+        display: flex;
+        span {
+          transform: rotate(0.5turn);
+          margin-top: 3px;
+        }
       }
     }
     .item:nth-child(2) {
