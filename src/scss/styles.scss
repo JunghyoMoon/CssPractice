@@ -15,18 +15,18 @@
   font-weight: 500;
   color: white;
   .container {
-    width: 95%;
+    width: 97%;
     height: 95%;
     display: grid;
-    grid-template-columns: 4% repeat(2, 46%) 4%;
-    grid-template-rows: 6% repeat(8, 11%) 6%;
+    grid-template-columns: 3% repeat(2, 47%) 3%;
+    grid-template-rows: 5% repeat(8, 11.3%) 5%;
     grid-template-areas:
       "header header header header"
       "leftNav pictureLeft pictureRight rightTop"
       "leftNav pictureLeft pictureRight rightTop"
       "leftNav pictureLeft pictureRight rightTop"
       "leftNav pictureLeft pictureRight rightTop"
-      "leftQut pictureLeft pictureRight rightBottom"
+      "leftNav pictureLeft pictureRight rightBottom"
       "leftQut pictureLeft pictureRight rightBottom"
       "leftQut pictureLeft pictureRight rightBottom"
       "leftIcon pictureLeft pictureRight rightBottom"
@@ -40,16 +40,29 @@
     }
     .leftNav {
       @extend %orangeBackground;
+      @extend %verticalText;
+      justify-content: center;
       grid-area: leftNav;
+      span {
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+      }
     }
     .leftQut {
       @extend %whiteBackground;
+      @extend %verticalText;
       @extend %border;
+      justify-content: center;
       grid-area: leftQut;
+      span {
+        transform: rotate(270deg);
+      }
     }
     .leftIcon {
       @extend %whiteBackground;
       @extend %border;
+      @extend %verticalText;
+      justify-content: space-evenly;
       border-top: none;
       border-bottom: none;
       grid-area: leftIcon;
@@ -75,11 +88,23 @@
     }
 
     #rightTop {
+      @extend %verticalText;
+      justify-content: space-evenly;
+      span {
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+      }
       grid-area: rightTop;
       border-top: none;
     }
 
     #rightBottom {
+      @extend %verticalText;
+      justify-content: space-evenly;
+      span {
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+      }
       grid-area: rightBottom;
       border-top: none;
       border-bottom: none;
@@ -111,7 +136,18 @@
 
     .chat {
       @extend %orangeBackground;
+      width: 50px;
+      height: 50px;
+      border-radius: 25%;
       position: absolute;
+      left: 93.5%;
+      top: 89%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &:hover {
+        @extend %border;
+      }
     }
   }
 }
