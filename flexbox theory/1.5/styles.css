@@ -1,0 +1,31 @@
+.father {
+  display: flex;
+  height: 200vh;
+  justify-content: space-around;
+  align-items: center;
+  /*
+  기본적으로, flexbox에서는 요소들의 너비, 높이를 줄여서라도 같은 줄에 있게 만듦.
+  "flex-wrap: wrap;"속성을 사용할 경우, 이를 해결할 수 있음
+  */
+  flex-wrap: wrap-reverse;
+  /*
+  flex-direction을 역순으로 지정 가능
+  */
+  flex-direction: row;
+  /*
+  align-content -> line을 만지는 옵션?
+  line은 cross axis에 있다!
+  */
+  align-content: space-around;
+}
+
+.child {
+  height: 200px;
+  width: 200px;
+  background-color: tomato;
+  color: white;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
