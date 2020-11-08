@@ -3,179 +3,154 @@
 @import "./variables";
 @import "./reset";
 
-.wrapper {
-  width: 100%;
-  height: 100%;
-  display: grid;
-  grid-template-columns: 57% 3% 39%;
+p {
+  white-space: pre-line;
+  margin-bottom: 20px;
+}
+
+span {
+  text-transform: uppercase;
+  font-weight: 500;
+  color: $grey;
+}
+
+ul {
+  font-size: 30px;
+  font-weight: 400;
   text-transform: capitalize;
 }
 
-section:first-child {
-  background-color: $orange;
-  padding: 1%;
+.container {
+  @extend %border;
+  background-color: $black;
+  width: 98%;
+  height: 98%;
+  margin: 1%;
   display: grid;
-  grid-template-rows: repeat(6, 1fr);
+  grid-gap: 3px;
+  grid-template-columns: repeat(12, minmax(min-content, 1fr));
+  grid-template-rows: repeat(10, auto);
 
-  .content {
-    border: 2px solid $red;
-    border-bottom: none;
-    display: grid;
-    grid-template-columns: 3% 75% auto;
-    grid-template-rows: repeat(2, auto);
-
-    &:nth-child(2) {
-      border: 2px solid $white;
-
-      .spec {
-        color: $white;
-
-        &:first-child {
-          border-right: 2px solid $white;
-        }
-        &:nth-child(2) {
-          border-right: 2px solid $white;
-        }
-        &:nth-child(3) {
-          border-bottom: 2px solid $white;
-        }
-        &:last-child {
-          .button {
-            background-color: $white;
-          }
-        }
-      }
-    }
-
-    &:nth-child(3) {
-      border-top: none;
-    }
-
-    &:last-child {
-      border-bottom: 2px solid $red;
-    }
-
-    .spec {
-      color: $red;
-      @extend %center;
-      &:first-child {
-        grid-row: span 2;
-        border-right: 2px solid $red;
-
-        span {
-          transform: rotate(180deg);
-          writing-mode: vertical-rl;
-        }
-      }
-
-      &:nth-child(2) {
-        grid-row: span 2;
-        border-right: 2px solid $red;
-        justify-content: flex-start;
-
-        span {
-          margin-left: 15px;
-          font-size: 70px;
-          font-weight: 600;
-        }
-      }
-
-      &:nth-child(3) {
-        border-bottom: 2px solid $red;
-      }
-
-      &:last-child {
-        .button {
-          width: 85%;
-          height: 70%;
-          background-color: $red;
-          color: $orange;
-          @extend %center;
-          border-radius: 30px;
-        }
-      }
-    }
-  }
-}
-
-section:nth-child(2) {
-  background-color: $purple;
-  width: 100%;
-  height: 100%;
-  display: grid;
-  grid-template-rows: repeat(2, 50%);
-
-  .whatever {
-    width: 100%;
-    height: 100%;
+  .item {
+    background-color: $white;
+    padding: 20px;
 
     &:first-child {
-      background-color: $purple;
+      grid-column: 1 / 4;
+      grid-row: span 2;
       display: flex;
       flex-direction: column;
-      align-items: center;
-
-      span {
-        writing-mode: vertical-rl;
-        font-size: 25px;
-        font-weight: 600;
-        margin-top: 10px;
-      }
+      justify-content: space-between;
     }
     &:nth-child(2) {
-      background-color: $blue;
+      grid-column: 1 / 4;
+      grid-row: 3 / span 2;
+      padding: 0px;
+      display: grid;
+      background-color: $black;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 100%;
+      grid-gap: 3px;
+
+      .button {
+        background-color: $white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+    &:nth-child(3) {
+      grid-column: 1 / 4;
+      grid-row: 5 / span 6;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      align-items: center;
-
-      span {
-        transform: rotate(180deg);
-        writing-mode: vertical-rl;
-        font-size: 25px;
-        font-weight: 600;
-        margin-bottom: 10px;
+      ul {
+        font-size: 20px;
+        margin-bottom: 30px;
       }
+    }
+    &:nth-child(4) {
+      grid-column: 4 / span 3;
+      grid-row: 1 / span 8;
+      ul {
+        font-size: 50px;
+        margin-top: 60px;
+        margin-bottom: 45px;
+      }
+      .none {
+        margin-bottom: 0px;
+      }
+    }
+    &:nth-child(5) {
+      grid-column: 4 / span 3;
+      grid-row: 9 / span 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    &:nth-child(6) {
+      grid-column: 7 / span 3;
+      grid-row: 1 / span 8;
+      background-image: url("https://img.hankyung.com/photo/202001/01.21396048.1.jpg");
+      background-size: cover;
+    }
+    &:nth-child(7) {
+      grid-column: 7 / span 1;
+      grid-row: span 2;
+      background-image: url("https://static.hubzum.zumst.com/2017/09/12/15/59c8ee4999e547828e83ca9558aaddb8.jpg");
+      background-size: no-repeat;
+    }
+    &:nth-child(8) {
+      background-image: url("https://subokim.files.wordpress.com/2017/02/shutterstock_65821615.jpg?w=640");
+      background-size: contain;
+    }
+    &:nth-child(9) {
+      grid-column: 8 / span 1;
+      background-image: url("https://www.journalist.or.kr/data/photos/20190312/art_1552401779.jpg");
+      background-size: cover;
+    }
+    &:nth-child(10) {
+      grid-column: -4 / span 3;
+      grid-row: 1 / span 4;
+      background-image: url("https://www.cnews.co.kr/photo/photo/2020/05/27/202005271149490730295-2-142505.jpg");
+      background-size: cover;
+    }
+    &:nth-child(11) {
+      grid-column: -4 / span 2;
+      grid-row: 5 / span 2;
+      background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSTSGINLujJUF2wjJSnItNeRLUE2VCb_xHsiQ&usqp=CAU");
+      background-size: cover;
+    }
+    &:nth-child(12) {
+      grid-column: -2 / span 1;
+      grid-row: 5 / span 1;
+      background-image: url("https://insideobject.com/web/product/tiny/201905/0e36df8673e4e7947839d7b850d597b8.jpg");
+      background-size: contain;
+    }
+    &:nth-child(13) {
+      grid-column: -2 / span 1;
+      grid-row: 6 / span 1;
+      background-image: url("https://tumblbug-pci.imgix.net/e32b7aef51d5b44a6fdc1e7b8fa19fad8e6e2a8e/bd164ddba159d40cebbe2f148731d65269af434e/b9cc13d5871c48d5e414f2896723f6cd38d98289/0fc703c6-53de-4356-9ea3-3913ca1ac36b.jpg?ixlib=rb-1.1.0&w=1240&h=930&auto=format%2Ccompress&lossless=true&fit=crop&s=228d71a5dbda4fd0ba561f79d5ccd9d0");
+      background-size: contain;
+    }
+    &:nth-child(14) {
+      grid-column: -4 / span 1;
+      grid-row: 7 / span 2;
+      background-image: url("https://www.costco.co.kr/medias/sys_master/images/he7/h98/11834529644574.jpg");
+      background-size: contain;
+    }
+    &:nth-child(15) {
+      grid-column: -3 / span 2;
+      grid-row: 7 / span 2;
+      background-image: url("https://m.hbsofa.com/web/product/big/201902/55b272cfc46f245c9099f7e085e0e55a.jpg");
+      background-size: cover;
     }
     &:last-child {
-      width: 3%;
-      height: 100%;
-      background-color: none;
-      position: absolute;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-  }
-}
-
-section:last-child {
-  width: 100%;
-  height: 100%;
-  background-color: $red;
-  padding: 0% 1%;
-  display: grid;
-  grid-gap: 1%;
-  grid-template-columns: repeat(2, auto);
-  grid-template-rows: 6% repeat(6, auto);
-
-  .info {
-    border-top: 2px solid black;
-
-    &:first-child {
-      width: 100%;
-      border-top: none;
-      grid-column: span 2;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      span:nth-child(2) {
-      }
-    }
-
-    span {
-      font-size: 25px;
+      grid-column: -5 / span 4;
+      grid-row: 9 / span 2;
+      background-image: url("https://images.homify.com/image/upload/a_0,c_fit,f_auto,q_auto,w_554/v1519137567/p/photo/image/2443557/1_%C3%9A_%C3%88%C2%B5%C2%B5.jpg");
+      background-size: cover;
     }
   }
 }
